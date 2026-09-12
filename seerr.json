@@ -1,6 +1,6 @@
 {
   "seerr": {
-    "description": "Request management and media discovery tool for your Plex ecosystem, integrating with Sonarr and Radarr.<p>Based on a <a href='ghcr.io/daemonless/seerr' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Request management and media discovery tool for your Plex ecosystem, integrating with Sonarr and Radarr.<p>Based on a <a href='https://ghcr.io/daemonless/seerr' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "version": "1.0",
     "website": "https://seerr.dev/",
     "containers": {
