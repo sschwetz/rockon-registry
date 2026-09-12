@@ -1,6 +1,6 @@
 {
   "seerr": {
-    "description": "Request management and media discovery tool for your Plex ecosystem, integrating with Sonarr and Radarr.<p>Based on a <a href='https://ghcr.io/daemonless/seerr' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
+    "description": "Request management and media discovery tool for your Plex ecosystem, integrating with Sonarr and Radarr.<p>Based on a <a href='ghcr.io/daemonless/seerr' target='_blank'>custom OCI image</a>, available for amd64 and arm64 architecture.</p>",
     "version": "1.0",
     "website": "https://seerr.dev/",
     "containers": {
@@ -17,27 +17,17 @@
           }
         },
         "volumes": {
-          "/config": {
-            "description": "Configuration and database. Minimum Size: 1 Gigabyte. Should be owned by the UID:GID entered below, e.g. (1000:1000).",
-            "label": "Config Storage [e.g. overseerr-config]",
+          "/app/config": {
+            "description": "Configuration and database. Minimum Size: 1 Gigabyte. Must be owned by the UID:GID as (1000:1000).",
+            "label": "Config Storage [e.g. seerr-config]",
             "min_size": 1073741824
           }
         },
         "environment": {
-          "PGID": {
-            "description": "Enter a valid GID to use along with the same UID. It(or the above UID) must have full permissions to the config Share mapped in the previous step.",
-            "label": "GID [e.g. 1000]",
-            "index": 2
-          },
-          "PUID": {
-            "description": "Enter a valid UID to run Overseerr with. It must have full permissions to the config Share mapped in the previous step.",
-            "label": "UID [e.g. 1000]",
+          "LOG_LEVEL": {
+            "description": "Enter the logging level",
+            "label": "Logging [valid levels: debug/info/warn/error]",
             "index": 1
-          },
-          "TZ": {
-            "description": "Timezone for correct request and log timestamps.",
-            "label": "TZ [e.g. Australia/Sydney]",
-            "index": 3
           }
         }
       }
